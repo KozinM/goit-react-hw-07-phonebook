@@ -1,0 +1,34 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 10px;
+    font-family: sans-serif;
+    border: 1px solid rgb(145, 145, 145);
+  }
+  
+  .label {
+    font-size: 18px;
+    width: 200px;
+  }
+  
+  .input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    background-color: #fff;
+    border: 1px solid grey;
+    border-radius: 3px;
+    display: inline-block;
+    height: 20px;
+    width: 90px;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+    background-color:#5D98F7;
+    border: 1px solid #5D98F7;
+  }
