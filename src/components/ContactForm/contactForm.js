@@ -27,7 +27,7 @@ const handleChangeNumber = event => {
 
 const contacts = useSelector(selectContacts);
 
-const isContactExist = contacts.find(
+const isContactExist = contacts.items.find(
   contact => contact.name.toLowerCase() === name.toLowerCase()
 );
 

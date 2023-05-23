@@ -1,14 +1,30 @@
+import { useEffect } from 'react';
+import { useDispatch} from 'react-redux';
+import { fetchContacts } from 'redux/operations';
 
 import styles from './style.module.css';
 import ContactItem from './ContactItem/contactItem';
 import { useSelector } from 'react-redux';
-import { selectFilteredContacts } from 'redux/selectors';
+import { selectContacts, selectFilteredContacts } from 'redux/selectors';
 
 const ContactList = () => {
+
+  const dispatch = useDispatch();
+  // Получаем части состояния
+  const { items, isLoading, error } = useSelector(selectContacts);
+
+  // Вызываем операцию
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   const getVisibleContacts = useSelector(selectFilteredContacts);
+
   return (
     <div>
-      <ul className={styles.contactsList}>
+      {isLoading && <p>Loading tasks...</p>}
+      {error && <p>We've got this error: {error}</p>}
+      {items.length>0 && <ul className={styles.contactsList}>
         {getVisibleContacts.map(({ id, name, number }) => {
           return (
             <ContactItem 
@@ -20,6 +36,8 @@ const ContactList = () => {
           );
         })}
       </ul>
+      }
+      
     </div>
   );
 };
