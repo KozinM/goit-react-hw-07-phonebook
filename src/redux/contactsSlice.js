@@ -55,30 +55,7 @@ const contactsSlice = createSlice({
       state.error = action.payload;
     },
   },
-  /* // reducers
-  reducers: {
-    addContact(state, action) {
-      return [...state, action.payload];
-    },
-    deleteContact(state, action) {
-      return state.filter(contact => contact.id !== action.payload);
-    },
-    fetchingInProgress(state) {
-      state.isLoading = true;
-    },
-    fetchingSuccess(state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = action.payload;
-    },
-    fetchingError(state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-  }, */
 });
 
-// action generator
-//export const { addContact, deleteContact, fetchingInProgress, fetchingSuccess, fetchingError } = contactsSlice.actions;
 // slice's reducer
 export const contactsReducer = contactsSlice.reducer;

@@ -1,11 +1,9 @@
 import React, { useState} from 'react';
-import { nanoid } from 'nanoid';
 import styles from './style.module.css';
 
 //redux's hooks import
 import { useDispatch, useSelector } from 'react-redux';
-//actions import
-//import { addContact } from 'redux/contactsSlice';
+
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
 
@@ -39,7 +37,6 @@ const handleSubmit = event => {
   }
   
   const data = {
-    /* id: nanoid(), */
     name,
     number,
   };
