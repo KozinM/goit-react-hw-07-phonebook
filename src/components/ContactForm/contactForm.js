@@ -5,8 +5,9 @@ import styles from './style.module.css';
 //redux's hooks import
 import { useDispatch, useSelector } from 'react-redux';
 //actions import
-import { addContact } from 'redux/contactsSlice';
+//import { addContact } from 'redux/contactsSlice';
 import { selectContacts } from 'redux/selectors';
+import { addContact } from 'redux/operations';
 
 
 export const ContactForm = () => {
@@ -38,7 +39,7 @@ const handleSubmit = event => {
   }
   
   const data = {
-    id: nanoid(),
+    /* id: nanoid(), */
     name,
     number,
   };

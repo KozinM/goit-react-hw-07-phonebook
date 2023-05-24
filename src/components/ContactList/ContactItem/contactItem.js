@@ -5,7 +5,8 @@ import styles from './style.module.css';
 import { useDispatch } from "react-redux";
 
 //action import
-import { deleteContact } from 'redux/contactsSlice';
+//import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 
 const ContactItem = ({id, name, number}) => {
 
