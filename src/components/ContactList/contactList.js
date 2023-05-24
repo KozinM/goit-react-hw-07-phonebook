@@ -23,7 +23,7 @@ const ContactList = () => {
   return (
     <div>
       {isLoading && <p>Loading tasks...</p>}
-      {error && <p>We've got this error: {error}</p>}
+      {error && <p><strong>We've got this error: </strong>{error}</p>}
       {items.length>0 && <ul className={styles.contactsList}>
         {getVisibleContacts.map(({ id, name, number }) => {
           return (
